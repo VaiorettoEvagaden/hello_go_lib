@@ -15,3 +15,17 @@ func TwoSum(nums []int, target int) []int {
 	}
 	return []int{}
 }
+
+func TwoSumBubble(nums []int, target int) []int {
+	// Time: O(n*n) = O(n^2)
+	for i := 0; i < len(nums)-1; i++ {
+		// Time: O(n)
+		for j := len(nums) - 1; j > i; j-- {
+			// Time: O(1)
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
+	}
+	return []int{}
+}
